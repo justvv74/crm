@@ -1,0 +1,7 @@
+@import 'var';
+
+@mixin transition {
+  transition-property: color, border, border-color, background-color, rotate, opacity, transform, visibility, display, scale;
+  transition-duration: .2s;
+  transition-timing-function: ease;
+}

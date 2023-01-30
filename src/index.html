@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="lib.js" defer></script>
+  <script src="main.js" defer></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__container flex">
+      <a href="#" class="header__logo">
+        <svg class="header__logo-img">
+          <use href="img/sprite.svg#logo"></use>
+        </svg>
+      </a>
+      <form id="search-form" class="header__search-form">
+        <input id="search" type="text" class="header__search" placeholder="Введите запрос">
+        <ul id="search-list" class="header__search-list"></ul>
+      </form>
+    </div>
+  </header>
+  <main>
+    <section class="clients">
+      <div class="container">
+        <h2 class="clients__title reset">
+          Клиенты
+        </h2>
+        <div class="clients__content">
+          <ul class="clients__header grid list-reset clients__table-row">
+            <li class="flex clients__table-id clients__header-item">
+              <button id="btn-id" class="clients__header-btn">
+                ID
+                <svg class="clients__header-btn-img">
+                  <use href="img/sprite.svg#arrow"></use>
+                </svg>
+              </button>
+            </li>
+            <li class="flex clients__table-fullname clients__header-item">
+              <button id="btn-name" class="clients__header-btn">
+                Фамилия Имя Отчество
+                <svg class="clients__header-btn-img">
+                  <use href="img/sprite.svg#arrow"></use>
+                </svg>
+                <span class="clients__header-btn-letter">А-Я</span>
+              </button>
+            </li>
+            <li class="flex clients__table-create-date clients__header-item">
+              <button id="btn-date-create" class="clients__header-btn">
+                Дата и время создания
+                <svg class="clients__header-btn-img">
+                  <use href="img/sprite.svg#arrow"></use>
+                </svg>
+              </button>
+            </li>
+            <li class="flex clients__table-change-date clients__header-item">
+              <button id="btn-date-change" class="clients__header-btn">
+                Последние изменения
+                <svg class="clients__header-btn-img">
+                  <use href="img/sprite.svg#arrow"></use>
+                </svg>
+              </button>
+            </li>
+            <li class="flex clients__table-contact-box clients__header-item">
+              Контакты
+            </li>
+            <li class="flex clients__table-btn-box clients__header-item clients__header-item-6">
+              Действия
+            </li>
+          </ul>
+          <div class="clients__background">
+            <div id="clients-list" class="clients__table"></div>
+          </div>
+        </div>
+        <button id="add-client-modal-open" class="clients__new-client-add flex">
+          <svg class="clients__new-client-add-img">
+            <use href="img/sprite.svg#add-client"></use>
+          </svg>
+          Добавить клиента
+        </button>
+      </div>
+    </section>
+  </main>
+  <div id="add-client-modal" class="modal">
+    <div id="add-client-modal-box" class="modal__box">
+      <div class="modal__header flex">
+        <h2 class="modal__title reset ">
+          Новый клиент
+        </h2>
+      </div>
+      <button id="add-client-modal-close" class="modal__close">
+        <svg class="modal__close-img">
+          <use href="img/sprite.svg#cross"></use>
+        </svg>
+      </button>
+      <form id="add-client-form" class="modal__form flex">
+        <label id="add-client-label-surname" for="add-client-surname" class="modal__label flex">
+        </label>
+        <input id="add-client-surname" class="modal__input add-client-input" type="text" placeholder="Фамилия*">
+        <label id="add-client-label-name" for="add-client-name" class="modal__label flex">
+        </label>
+        <input id="add-client-name" class="modal__input add-client-input" type="text" placeholder="Имя*">
+        <label id="add-client-label-middlename" for="add-client-middlename" class="modal__label flex">
+        </label>
+        <input id="add-client-middlename" class="modal__input add-client-input" type="text" placeholder="Отчество">
+      </form>
+      <button id="add-client-add-contact" class="modal__add-input">
+        <svg class="modal__add-input-img">
+          <use href="img/sprite.svg#add_circle_outline"></use>
+        </svg>
+        Добавить контакт
+      </button>
+      <p id="add-client-error" class="modal__error"></p>
+      <button id="add-client-save" form="add-client-form" class="btn-color flex">
+        <span id="add-client-save-loading" class="btn-color-loading"></span>
+        Сохранить
+      </button>
+      <button id="add-client-cancel" class="btn-cancel">
+        Отмена
+      </button>
+    </div>
+  </div>
+  <div id="change-modal" class="modal" role="dialog" tabindex="1">
+    <div id="change-modal-box" class="modal__box">
+      <div class="modal__header flex">
+        <h2 class="modal__title reset">
+          Изменить данные
+        </h2>
+        <a id="change-id" class="modal__id reset" role="dialog" tabindex="1"></a>
+      </div>
+      <button id="change-modal-close" class="modal__close">
+        <svg class="modal__close-img">
+          <use href="img/sprite.svg#cross"></use>
+        </svg>
+      </button>
+      <form id="change-form" class="modal__form flex">
+        <label id="change-label-surname" for="change-surname" class="modal__label flex" tabindex="1">
+          Фамилия*
+        </label>
+        <input id="change-surname" class="modal__input" type="text">
+        <label id="change-label-name" for="change-name" class="modal__label flex">
+          Имя*
+        </label>
+        <input id="change-name" class="modal__input" type="text">
+        <label id="change-label-middlename" for="change-middlename" class="modal__label flex">
+          Отчество
+        </label>
+        <input id="change-middlename" class="modal__input" type="text">
+      </form>
+      <button id="change-add-contact" class="modal__add-input">
+        <svg class="modal__add-input-img">
+          <use href="img/sprite.svg#add_circle_outline"></use>
+        </svg>
+        Добавить контакт
+      </button>
+      <p id="change-error" class="modal__error"></p>
+      <button id="change-save" form="change-form" class="btn-color flex">
+        <span id="change-save-loading" class="btn-color-loading"></span>
+        Сохранить
+      </button>
+      <button id="change-cancel" class="btn-cancel">
+        Удалить клиента
+      </button>
+    </div>
+  </div>
+  <div id="client-del-modal" class="modal">
+    <div id="client-del-modal-box" class="modal__box flex">
+      <h2 class="modal-title reset">
+        Удалить клиента
+      </h2>
+      <button id="client-del-close" class="modal__close">
+        <svg class="modal__close-img">
+          <use href="img/sprite.svg#cross"></use>
+        </svg>
+      </button>
+      <p class="modal__text reset">
+        Вы действительно хотите удалить данного клиента?
+      </p>
+      <button id="client-del-cancel" class="btn-cancel">
+        Отмена
+      </button>
+    </div>
+
+  </div>
+</body>
+
+</html>

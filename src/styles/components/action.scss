@@ -1,0 +1,230 @@
+@import 'var';
+
+.header {
+  &__logo {
+    &:focus {
+      border-radius: 4px;
+      outline: 2px solid $colorPurple;
+      outline-offset: 2px;
+    }
+  }
+
+  &__search {
+    &:focus {
+      outline: 2px solid $colorPurple;
+    }
+
+    &:hover {
+      background-color: #e5e0f3;
+    }
+  }
+}
+
+.clients {
+  &__header {
+    &:hover {
+      background-color: #e5e5e5!important;
+    }
+  }
+
+  &__header-btn {
+    &:focus {
+      border-radius: 2px;
+      outline: 1px solid $colorPurple;
+      outline-offset: 2px;
+    }
+  }
+
+  &__table {
+    &-contact {
+      &:hover {
+        color: #632aff;
+      }
+    }
+
+    &-row {
+      &:hover {
+        background-color: #c8c5d133;
+      }
+    }
+
+    &-btn {
+      &:focus {
+        border-radius: 2px;
+        outline: 1px solid $colorPurple;
+      }
+
+      &:hover {
+        padding: 2px;
+        background-color: #dfbe6c;
+      }
+
+      &:active {
+        color: white;
+        background-color: $colorOrange;
+        outline: none;
+      }
+    }
+  }
+
+
+  &__new-client-add {
+    &:focus {
+      outline: none;
+      background-color: #9873ff23;
+    }
+
+    &:hover {
+      background-color: white;
+    }
+
+    &:active {
+      color: white;
+      background-color: #9873ff;
+
+      & svg {
+        color: white;
+      }
+    }
+  }
+}
+
+.modal {
+  &__close {
+    &:focus {
+      border-radius: 4px;
+      outline: 2px solid $colorPurple;
+      outline-offset: 2px;
+    }
+
+    &:hover {
+      & svg {
+        color: $colorPurple;
+      }
+    }
+
+    &:active {
+      outline: none;
+      & svg {
+        color: $colorRed;
+      }
+    }
+  }
+
+  &__input {
+    &:focus {
+      border-radius: 2px;
+      outline: 2px solid $colorPurple;
+    }
+
+    &:hover {
+      background-color: #9873ff23;
+    }
+
+    &:active {
+      background-color: #9873ff23;
+    }
+  }
+
+  &__add-input {
+    &:focus {
+      outline: none;
+      background-color: #74cf8b;
+    }
+
+    &:hover {
+      background-color: $colorGreen;
+    }
+
+    &:active {
+      background-color: #09e226;
+      outline: none;
+    }
+  }
+}
+
+.btn-color {
+  &:focus {
+    outline: none;
+    background-color: #74cf8b;
+  }
+
+  &:hover {
+    background-color: $colorGreen;
+  }
+
+  &:active {
+    color: white;
+    background-color: #09e226;
+    outline: none;
+  }
+}
+
+.btn-cancel {
+  &:focus {
+    border-radius: 4px;
+    outline: 2px solid $colorPurple;
+    outline-offset: 2px;
+  }
+
+  &:hover {
+    color: $colorRed;
+  }
+
+  &:active {
+    color: #fc2c1d;
+    outline: none;
+  }
+}
+
+.new-contact {
+  &__select {
+    &:focus {
+      border-radius: 2px;
+      outline: 2px solid $colorPurple;
+      outline-offset: -2px;
+    }
+
+    &:hover {
+      background-color: #987de03f;
+    }
+
+    &:active {
+      background-color: $colorPurple;
+    }
+  }
+
+  &__input {
+    &:focus {
+      border-radius: 2px;
+      outline: 2px solid $colorPurple;
+      outline-offset: -2px;
+    }
+
+    &:hover {
+      background-color: #9873ff23;
+    }
+
+    &:active {
+      background-color: #9873ff23;
+    }
+  }
+
+  &__delete {
+    &:focus {
+      border-radius: 2px;
+      outline: 2px solid $colorPurple;
+      outline-offset: -2px;
+    }
+
+    &:hover {
+      background-color: $colorRed;
+      color: $colorRed;
+    }
+
+    &:active {
+      background-color: #fc2c1d;
+      outline: none;
+    }
+  }
+}
