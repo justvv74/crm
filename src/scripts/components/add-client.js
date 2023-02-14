@@ -177,7 +177,7 @@ export function clearAddForm(formName) {
 }
 
 export async function addNewClients(data) {
-  const RESPONSE = await fetch('http://localhost:3000/api/clients', {
+  const RESPONSE = await fetch('http://localhost:3005/api/clients', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

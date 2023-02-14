@@ -105,7 +105,7 @@ async function search(e) {
 }
 
 async function getSearchData(e) {
-  const RESPONSE = await fetch(`http://localhost:3000/api/clients?search=${e}`);
+  const RESPONSE = await fetch(`http://localhost:3005/api/clients?search=${e}`);
   const RESULT = RESPONSE.json();
 
   return RESULT;

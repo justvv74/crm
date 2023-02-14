@@ -321,7 +321,7 @@ export function setLocation(curLoc) {
 }
 
 async function removeContactFromList(id) {
-  const RESPONSE = await fetch(`http://localhost:3000/api/clients/${id}`, {
+  const RESPONSE = await fetch(`http://localhost:3005/api/clients/${id}`, {
     method: 'DELETE',
   });
   const RESULT = RESPONSE.json();
@@ -330,14 +330,14 @@ async function removeContactFromList(id) {
 }
 
 export async function getClientsList() {
-  const RESPONSE = await fetch('http://localhost:3000/api/clients');
+  const RESPONSE = await fetch('http://localhost:3005/api/clients');
   const RESULT = RESPONSE.json();
 
   return RESULT;
 }
 
 export async function editClientData(id, data) {
-  const RESPONSE = await fetch(`http://localhost:3000/api/clients/${id}`, {
+  const RESPONSE = await fetch(`http://localhost:3005/api/clients/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json'
@@ -350,7 +350,7 @@ export async function editClientData(id, data) {
 }
 
 async function getClientData(id) {
-  const RESPONSE = await fetch(`http://localhost:3000/api/client/${id}`);
+  const RESPONSE = await fetch(`http://localhost:3005/api/client/${id}`);
   const RESULT = RESPONSE.json();
 
   return RESULT;
